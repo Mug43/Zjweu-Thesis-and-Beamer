@@ -55,7 +55,13 @@
 \pagenumbering{arabic}
 \setcounter{page}{1}
 
-% 引入各章节
+% 引言（不计入章节编号）
+\phantomsection
+\addcontentsline{toc}{chapter}{引言}
+\input{Report/chp/chapter00-introduction}
+
+% 正式章节从第一章开始
+\setcounter{chapter}{0}
 \input{Report/chp/chapter01}
 % \input{Report/chp/chapter02}
 % \input{Report/chp/chapter03}
@@ -64,6 +70,8 @@
 %--- 参考文献 ---
 % 使用国标 GB/T 7714 参考文献格式
 \clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{参考文献}
 \bibliographystyle{gbt7714-numerical}
 \bibliography{references}
 
