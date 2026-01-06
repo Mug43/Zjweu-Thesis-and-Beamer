@@ -93,9 +93,10 @@ xelatex main-example.tex  # 编译两次以生成目录
 #### 第二步：编写内容
 
 - **摘要**: 编辑 `Report/abstract.tex`
-- **章节**: 编辑或新建 `Report/chp/chapter*.tex`
+- **引言**（可选）: 编辑 `Report/chp/chapter00-introduction.tex` - 独立章节，不计入编号
+- **章节**: 编辑或新建 `Report/chp/chapter*.tex` - 从第一章开始编号
 - **图片**: 放入 `Report/Fig/` 目录
-- **参考文献**: 编辑 `Report/ref/references.tex` 或 `references.bib`
+- **参考文献**: 编辑 `references.bib`（推荐）或 `Report/ref/references.tex`
 
 #### 第三步：编译
 
