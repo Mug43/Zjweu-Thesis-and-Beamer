@@ -114,7 +114,11 @@ zjweu-thesis-beta/
    
    修改 `Report/abstract.tex`
 
-3. **编写章节**
+3. **编写引言（可选）**
+   
+   引言作为独立章节，不计入章节编号。修改 `Report/chp/chapter00-introduction.tex`
+
+4. **编写章节**
    
    在 `Report/chp/` 目录下创建章节文件：
    ```latex
