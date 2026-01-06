@@ -23,16 +23,19 @@ cd "ZJWEU Beamer Theme"
 xelatex slide.tex
 ```
 
-### 2. [ZJWEU Thesis](ZJWEU%20Thesis/) ⭐ - 毕业论文模板 `v0.1.0-beta`
+### 2. [ZJWEU Thesis](ZJWEU%20Thesis/) ⭐ - 毕业论文模板 `v0.2.0-beta`
 
-**适用场景**: 本科/研究生毕业论文
+**适用场景**: 本科毕业论文
 
 **主要特性**:
 - ✅ **模块化设计** - 独立 `.cls` 类文件，易于维护和定制
 - ✅ **自动化格式** - 符合学校规范的页面、字体、间距设置
 - ✅ **章节编号** - 公式、图表采用 X-Y 格式（章-序号）
 - ✅ **双语摘要** - 中英文摘要环境支持
-- ✅ **参考文献** - 支持 BibTeX 和手动两种方式
+- ✨ **国标参考文献** - GB/T 7714 格式支持
+- ✨ **完整封面** - 自动生成符合学校规范的封面
+- ✨ **声明页** - 自动生成声明及授权页
+- ✨ **致谢环境** - 规范的致谢页面支持
 - ✅ **三线表** - 规范的表格样式
 - ✅ **完整文档** - README、快速入门、详细使用说明
 
@@ -73,11 +76,18 @@ xelatex main-example.tex  # 编译两次以生成目录
 
 编辑 `main-example.tex`:
 ```latex
+% 基本信息
 \zjweuthesistitle{你的论文题目}
 \zjweuauthor{你的姓名}
 \zjweumajor{你的专业}
 \zjweuadvisor{指导教师姓名}
 \zjweudate{2026年6月}
+
+% 封面额外信息（新增）
+\zjweucollege{学院名称}
+\zjweustudentid{学号}
+\zjweugrade{2024}  % 届数
+\zjweucovertitle{毕业设计（论文）}
 ```
 
 #### 第二步：编写内容
@@ -115,9 +125,11 @@ Zjweu-Thesis-and-Beamer/
 │   └── ref.bib                 # 参考文献
 │
 └── ZJWEU Thesis/                # 论文模板 ⭐
-    ├── zjweu-thesis-beta.cls   # 模板类文件（核心）
+    ├── zjweu-thesis-beta.cls   # 模板类文件（核心）v0.2.0
     ├── main-example.tex        # 示例主文档
-    ├── references.bib          # BibTeX 数据库
+    ├── references.bib          # BibTeX 数据库（国标格式）
+    ├── logo/                   # 封面logo资源
+    │   └── logo.png            # 学校logo
     ├── Report/                 # 内容模块
     │   ├── abstract.tex        # 摘要
     │   ├── chp/                # 章节目录
@@ -152,6 +164,15 @@ Zjweu-Thesis-and-Beamer/
 ## 📝 版本历史
 
 ### ZJWEU Thesis
+- **v0.2.0-beta** (2026-01-06) - 最新版本 🎉
+  - 新增完整封面生成功能
+  - 新增声明及授权页
+  - 新增致谢环境
+  - 改用国标GB/T 7714参考文献格式
+  - 优化页眉系统和页面布局
+  - 新增三级目录显示
+  - 新增防止段落孤行孤字
+
 - **v0.1.0-beta** (2026-01-04)
   - 首个测试版本
   - 完整的模板功能
@@ -194,8 +215,9 @@ Zjweu-Thesis-and-Beamer/
 - **基于**: [清华大学 Beamer 主题](https://github.com/Trinkle23897/THU-Beamer-Theme) by 翁家翌
 
 ### ZJWEU Thesis Template
-- **版本**: v0.1.0-beta
+- **版本**: v0.2.0-beta
 - **许可**: MIT License
+- **最新更新**: 2026年1月6日
 
 ## 📮 联系方式
 
@@ -229,6 +251,6 @@ Zjweu-Thesis-and-Beamer/
 
 Made with ❤️ for ZJWEU students
 
-**最后更新**: 2026年1月4日
+**最后更新**: 2026年1月6日
 
 </div>
