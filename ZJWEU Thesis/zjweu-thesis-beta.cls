@@ -1,16 +1,16 @@
 % !TeX program = xelatex
 %% zjweu-thesis-beta.cls
 %% 浙江水利水电学院毕业设计（论文）LaTeX模板类文件
-%% Version: 0.1.0-beta
+%% Version: 0.2.1-beta
 %% Author: Copilot
 %% License: MIT License
-%% Date: 2026-01-04
+%% Date: 2026-01-07
 
 %---------------------------------------------------------------------------------
 % 版本信息
 %---------------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{zjweu-thesis-beta}[2026/01/04 v0.1.0-beta Zhejiang University of Water Resources and Electric Power Thesis Template]
+\ProvidesClass{zjweu-thesis-beta}[2026/01/07 v0.2.1-beta Zhejiang University of Water Resources and Electric Power Thesis Template]
 
 %---------------------------------------------------------------------------------
 % 类选项处理
@@ -181,6 +181,11 @@
 \numberwithin{equation}{chapter}
 \numberwithin{figure}{chapter}
 \numberwithin{table}{chapter}
+
+% 修改编号格式为"章节-序号"而非"章节.序号"
+\renewcommand{\theequation}{\thechapter-\arabic{equation}}
+\renewcommand{\thefigure}{\thechapter-\arabic{figure}}
+\renewcommand{\thetable}{\thechapter-\arabic{table}}
 
 % 图表标题和内容：五号宋体，居中
 \DeclareCaptionFont{five}{\zihao{5}\songti}

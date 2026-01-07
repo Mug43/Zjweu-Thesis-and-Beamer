@@ -1,0 +1,157 @@
+% 第二章：国内卫星遥感技术进展
+
+\chapter{国内卫星遥感技术进展}
+
+\section{中国气象卫星系统}
+中国气象卫星事业起步于20世纪70年代，经过多年发展，已建立起由极轨和静止轨道气象卫星组成的完整业务观测体系。
+
+\subsection{风云系列气象卫星}
+风云系列卫星是中国自主研制的气象卫星系统，包括风云一号、二号、三号、四号等多个系列，在天气预报、气候监测、防灾减灾等领域发挥着重要作用。
+
+表\ref{tab:fengyun-satellites}列出了主要风云系列卫星的技术参数。
+
+\begin{table}[htbp]
+\centering
+\caption{风云系列主要卫星技术参数}
+\label{tab:fengyun-satellites}
+\begin{tabular}{lccc}
+\toprule
+卫星名称 & 轨道类型 & 发射时间 & 空间分辨率 \\
+\midrule
+风云一号D & 极轨 & 2002年 & 1.1 km \\
+风云二号H & 静止 & 2018年 & 1 km (可见光) \\
+风云三号D & 极轨 & 2017年 & 250 m \\
+风云四号A & 静止 & 2016年 & 500 m \\
+风云四号B & 静止 & 2021年 & 500 m \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{降水观测能力}
+风云卫星搭载的微波成像仪和降水测量雷达可以有效监测降水分布。根据雷达方程，降水强度$R$与雷达反射率因子$Z$之间存在经验关系：
+
+\begin{equation}
+Z = aR^b
+\label{eq:z-r-relation}
+\end{equation}
+
+其中，$a$和$b$是经验系数，对于层云降水，典型取值为$a=200$，$b=1.6$。
+
+\section{高分系列对地观测卫星}
+高分系列卫星是中国高分辨率对地观测系统的重要组成部分，为水资源管理、环境监测等提供高质量遥感数据。
+
+\subsection{高分一号卫星}
+高分一号（GF-1）卫星于2013年发射，搭载2米全色和8米多光谱相机，以及16米多光谱宽幅相机，幅宽达到800公里。
+
+如图\ref{fig:gaofen-coverage}所示，高分系列卫星的不同传感器组合可以满足多种应用需求。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{logo/logo.png}
+\caption{高分系列卫星覆盖能力示意图}
+\label{fig:gaofen-coverage}
+\end{figure}
+
+\subsection{高分三号SAR卫星}
+高分三号（GF-3）是中国首颗C波段多极化合成孔径雷达卫星，于2016年发射。其雷达成像分辨率最高可达1米，具有12种成像模式。
+
+SAR成像的基本原理基于多普勒效应，目标的径向速度$v_r$与多普勒频移$f_d$的关系为：
+
+\begin{equation}
+f_d = \frac{2v_r}{\lambda}
+\label{eq:doppler-shift}
+\end{equation}
+
+其中，$\lambda$为雷达波长。对于C波段SAR，波长约为5.6 cm。
+
+通过距离-多普勒算法，可以实现二维高分辨率成像。成像分辨率$\rho$与合成孔径长度$L_{SA}$的关系为：
+
+\begin{equation}
+\rho_{azimuth} = \frac{L_{antenna}}{2}
+\label{eq:sar-resolution}
+\end{equation}
+
+其中，$L_{antenna}$为天线物理长度。
+
+\section{遥感数据处理方法}
+
+\subsection{大气校正}
+遥感影像在获取过程中受到大气散射和吸收的影响，需要进行大气校正。基于辐射传输方程，地表反射率$\rho_{surface}$的计算公式为：
+
+\begin{equation}
+\rho_{surface} = \frac{\pi (L_{sensor} - L_{path})d^2}{E_{sun}\cos\theta_s T_{down}T_{up}}
+\label{eq:atmos-correction}
+\end{equation}
+
+其中：
+\begin{itemize}
+\item $L_{sensor}$：传感器接收的辐亮度
+\item $L_{path}$：大气路径辐射
+\item $d$：日地距离（天文单位）
+\item $E_{sun}$：太阳光谱辐照度
+\item $\theta_s$：太阳天顶角
+\item $T_{down}$：大气下行透过率
+\item $T_{up}$：大气上行透过率
+\end{itemize}
+
+\subsection{水体提取精度评估}
+遥感水体提取结果需要进行精度评估。表\ref{tab:accuracy-metrics}列出了常用的精度评价指标。
+
+\begin{table}[htbp]
+\centering
+\caption{遥感分类精度评价指标}
+\label{tab:accuracy-metrics}
+\begin{tabular}{lcc}
+\toprule
+评价指标 & 计算公式 & 理想值 \\
+\midrule
+总体精度（OA） & $(TP+TN)/(TP+TN+FP+FN)$ & 1.0 \\
+用户精度（UA） & $TP/(TP+FP)$ & 1.0 \\
+生产者精度（PA） & $TP/(TP+FN)$ & 1.0 \\
+Kappa系数 & $(P_o-P_e)/(1-P_e)$ & 1.0 \\
+F1分数 & $2TP/(2TP+FP+FN)$ & 1.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+其中，TP、TN、FP、FN分别表示真正例、真负例、假正例和假负例的数量。
+
+Kappa系数的详细计算公式为：
+
+\begin{equation}
+\kappa = \frac{P_o - P_e}{1 - P_e}
+\label{eq:kappa}
+\end{equation}
+
+其中，$P_o$为观测一致性概率，$P_e$为期望一致性概率：
+
+\begin{align}
+P_o &= \frac{TP + TN}{N} \label{eq:po} \\
+P_e &= \frac{(TP+FP)(TP+FN) + (TN+FP)(TN+FN)}{N^2} \label{eq:pe}
+\end{align}
+
+$N$为样本总数。
+
+\section{应用案例分析}
+
+\subsection{太湖水体监测}
+利用高分一号和风云三号卫星数据，可以实现对太湖水体的动态监测。图\ref{fig:taihu-monitoring}展示了多时相水体变化。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.75\textwidth]{logo/logo.png}
+\caption{太湖水体多时相遥感监测}
+\label{fig:taihu-monitoring}
+\end{figure}
+
+水体面积的变化率可以用以下公式计算：
+
+\begin{equation}
+\Delta A(\%) = \frac{A_t - A_0}{A_0} \times 100\%
+\label{eq:area-change}
+\end{equation}
+
+其中，$A_0$为初始时刻水体面积，$A_t$为$t$时刻水体面积。
+
+\section{本章小结}
+中国已建立起完整的卫星遥感体系，风云系列气象卫星和高分系列对地观测卫星在水文监测、灾害预警等方面发挥着重要作用。国产卫星的空间分辨率、时间分辨率和光谱分辨率不断提升，为水资源管理提供了可靠的数据支撑。通过综合应用多源遥感数据和先进的处理算法，可以实现对水体的精确监测和动态分析。

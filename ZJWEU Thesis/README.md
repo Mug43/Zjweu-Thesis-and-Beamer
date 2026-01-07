@@ -3,12 +3,12 @@
 **浙江水利水电学院毕业设计（论文）LaTeX模板**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-0.1.0--beta-blue.svg)](https://github.com/yourusername/zjweu-thesis-beta)
+[![Version](https://img.shields.io/badge/version-0.2.1--beta-blue.svg)](https://github.com/yourusername/zjweu-thesis-beta)
 
 ## 版本信息
 
-- **版本号**: v0.2.0-beta
-- **发布日期**: 2026年1月6日
+- **版本号**: v0.2.1-beta
+- **发布日期**: 2026年1月7日
 - **开源协议**: MIT License
 - **适用学校**: 浙江水利水电学院
 - **文档类型**: 毕业设计（论文）
@@ -18,8 +18,9 @@
 ✅ 符合浙江水利水电学院毕业论文格式要求  
 ✅ 模块化设计，便于维护和扩展  
 ✅ 支持XeLaTeX编译，完美支持中文  
-✅ 自动化的章节、图表、公式编号  
+✅ 自动化的章节、图表、公式编号（章节-序号格式）  
 ✅ 三线表、数学公式、图片插入支持  
+✅ 完整的示例章节（含丰富的表格、图片、公式示例）  
 ✅ 摘要、关键词环境  
 ✅ 国标GB/T 7714参考文献格式支持  
 ✅ 完整的封面和声明页生成  
@@ -27,6 +28,7 @@
 ✅ 防止段落孤行孤字  
 ✅ 支持三级目录显示（章/节/小节）  
 ✅ 页眉页脚自动同步  
+✅ 规范的格式设置（Times New Roman英文字体，22磅行距，小四字号）  
 
 ## 目录结构
 
@@ -42,8 +44,9 @@ zjweu-thesis-beta/
 ├── Report/                     # 论文内容模块
 │   ├── abstract.tex            # 摘要
 │   ├── chp/                    # 章节目录
-│   │   ├── chapter01.tex       # 第一章
-│   │   ├── chapter02.tex       # 第二章（需自行创建）
+│   │   ├── chapter00-introduction.tex  # 引言
+│   │   ├── chapter01.tex       # 第一章（含三线表、图片、公式示例）
+│   │   ├── chapter02.tex       # 第二章（含更多完整示例）
 │   │   └── ...
 │   ├── Fig/                    # 图片目录
 │   └── ref/                    # 参考文献目录
