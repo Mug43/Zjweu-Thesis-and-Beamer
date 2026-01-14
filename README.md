@@ -23,7 +23,7 @@ cd "ZJWEU Beamer Theme"
 xelatex slide.tex
 ```
 
-### 2. [ZJWEU Thesis](ZJWEU%20Thesis/) ⭐ - 毕业论文模板 `v0.2.0-beta`
+### 2. [ZJWEU Thesis](ZJWEU%20Thesis/) ⭐ - 毕业论文模板 `v0.2.1-beta`
 
 **适用场景**: 本科毕业论文
 
@@ -117,33 +117,50 @@ xelatex main-example.tex
 ```
 Zjweu-Thesis-and-Beamer/
 │
-├── ZJWEU Beamer Theme/          # Beamer 演示主题
-│   ├── ZJWEU_beamer.sty        # 主题样式文件
-│   ├── slide.tex               # 示例幻灯片
-│   ├── pic/                    # 图片资源
-│   │   ├── ZJWEU_background.jpg
-│   │   └── Zjweulogo.png
-│   └── ref.bib                 # 参考文献
+├── README.md                       # 本文件 - 项目总览
+├── LICENSE                         # MIT 开源协议
 │
-└── ZJWEU Thesis/                # 论文模板 ⭐
-    ├── zjweu-thesis-beta.cls   # 模板类文件（核心）v0.2.0
-    ├── main-example.tex        # 示例主文档
-    ├── references.bib          # BibTeX 数据库（国标格式）
-    ├── logo/                   # 封面logo资源
-    │   └── logo.png            # 学校logo
-    ├── Report/                 # 内容模块
-    │   ├── abstract.tex        # 摘要
-    │   ├── chp/                # 章节目录
-    │   ├── Fig/                # 图片目录
-    │   └── ref/                # 参考文献
-    ├── README.md               # 详细使用文档
-    ├── 快速入门.md             # 5分钟上手指南
-    ├── 参考文献使用说明.md     # 参考文献指南
-    ├── 项目结构说明.md         # 架构说明
-    ├── 项目总结.md             # 项目总结
-    ├── CHANGELOG.md            # 版本历史
-    ├── LICENSE                 # MIT 许可证
-    └── .gitignore              # Git 配置
+├── ZJWEU Beamer Theme/             # Beamer 演示主题
+│   ├── ZJWEU_beamer.sty           # ★ 主题样式文件
+│   ├── slide.tex                  # ★ 示例幻灯片
+│   ├── slide.pdf                  # 编译输出
+│   ├── ref.bib                    # 参考文献
+│   └── pic/                       # 图片资源目录
+│       ├── ZJWEU_background.jpg   # 背景图片
+│       ├── Zjweulogo.png          # 学校logo（透明背景）
+│       ├── Zjweulogo白底.png      # 学校logo（白底）
+│       └── dtmf.pdf               # 示例图片
+│
+└── ZJWEU Thesis/                   # ⭐ 论文模板 v0.2.1-beta
+    │
+    ├── 核心文件
+    │   ├── zjweu-thesis-beta.cls      # ★ 模板类文件 v0.2.1
+    │   ├── main-example.tex           # ★ 主文档（模块化示例）
+    │   ├── main-example.pdf           # 编译输出
+    │   └── references.bib             # BibTeX 参考文献数据库
+    │
+    ├── 文档与说明
+    │   ├── README.md                  # ★ 详细使用说明
+    │   ├── CHANGELOG.md               # 版本更新日志
+    │   ├── VERSION_0.2.1_更新说明.md  # v0.2.1 版本更新说明
+    │   ├── LICENSE                    # MIT 开源许可证
+    │   ├── 快速入门.md                # 5分钟上手指南
+    │   ├── 项目结构说明.md            # 项目结构详解
+    │   ├── 项目总结.md                # 开发总结
+    │   └── 参考文献使用说明.md        # 参考文献详细说明
+    │
+    ├── logo/                          # 封面logo资源
+    │   └── logo.png                   # 学校logo (14.66cm×4.42cm)
+    │
+    └── Report/                        # ★ 论文内容模块
+        ├── abstract.tex               # 中英文摘要
+        ├── chp/                       # 章节目录
+        │   ├── chapter00-introduction.tex # 引言（独立章节）
+        │   ├── chapter01.tex          # 第一章（含三线表、图片、公式示例）
+        │   └── chapter02.tex          # 第二章（含更多完整示例）
+        ├── Fig/                       # 图片资源目录
+        └── ref/                       # 参考文献目录
+            └── references.tex         # 参考文献（可选使用）
 ```
 
 ## 🎓 示例展示
@@ -165,7 +182,14 @@ Zjweu-Thesis-and-Beamer/
 ## 📝 版本历史
 
 ### ZJWEU Thesis
-- **v0.2.0-beta** (2026-01-06) - 最新版本 🎉
+- **v0.2.1-beta** (2026-01-07) - 最新版本 🎉
+  - 新增第二章完整示例（国内卫星遥感技术进展）
+  - 新增丰富的三线表、图片、公式示例
+  - 修复编号格式：统一为 X-Y 格式（章节-序号）
+  - 格式验证：确认符合学校论文规范
+  - 详见 [VERSION_0.2.1_更新说明.md](ZJWEU%20Thesis/VERSION_0.2.1_更新说明.md)
+
+- **v0.2.0-beta** (2026-01-06)
   - 新增完整封面生成功能
   - 新增声明及授权页
   - 新增致谢环境
@@ -216,9 +240,9 @@ Zjweu-Thesis-and-Beamer/
 - **基于**: [清华大学 Beamer 主题](https://github.com/Trinkle23897/THU-Beamer-Theme) by 翁家翌
 
 ### ZJWEU Thesis Template
-- **版本**: v0.2.0-beta
+- **版本**: v0.2.1-beta
 - **许可**: MIT License
-- **最新更新**: 2026年1月6日
+- **最新更新**: 2026年1月7日
 
 ## 📮 联系方式
 
@@ -252,6 +276,6 @@ Zjweu-Thesis-and-Beamer/
 
 Made with ❤️ for ZJWEU students
 
-**最后更新**: 2026年1月6日
+**最后更新**: 2026年1月7日
 
 </div>
